@@ -1,0 +1,50 @@
+= SixArm.com » Ruby » ProLogger custom logger with better information
+
+Author:: Joel Parker Henderson, joel@joelparkerhenderson.com
+Copyright:: Copyright (c) 2011 Joel Parker Henderson
+License:: See LICENSE.txt file
+
+ProLogger is a custom logger for Rails that prints these:
+
+* Timestamp in UTC
+* Hostname
+* Process Id
+* Severity: Rails defines these as debug, info, warn, error, and fatal.
+* Message: a string, exception, array, or any object that has a .inspect method)
+
+@example
+
+  @logger = ProLogger.new(:hostname => 'www', :timestamp_format => "%Y-%m-%d %H:%M:%SZ")
+
+@example Usage
+
+  @logger.info("Hello")
+  => "2011-12-31 12:59:59Z www rails[123] Hello"
+
+Intialization options:
+
+* hostname: the first piece of our server's hostname, e.g. "www"; default is "localhost"
+* timestamp_format: how to print the time; default is standard "%Y-%m-%d %H:%M:%SZ"
+* message_separator: print this between message items; default is " ### "
+* backtrace_separator: print this between exception backtrace items; default is " | "
+* line_separator: change any message newlines to this; default is " /// "
+
+@example Initialization
+
+  @logger = ProLogger.new(
+    :hostname => 'www', 
+    :timestamp_format => "%Y-%m-%d %H:%M:%SZ"
+  )
+
+The message can be:
+
+* a string: print the string, with leading whitespace stripped, and newlines replaced by line_separator.
+* an exception: print the class, message, and backtrace items separated by backtrace_separator.
+* an array of messages: print the items in the array, separated by message_separator.
+* any object: first convert it to a string using object.inspect, then print it as a string as above.
+
+Thanks to topfunky for the open source custom logger at:
+https://github.com/topfunky/hodel_3000_compliant_logger/
+
+
+
