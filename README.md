@@ -1,8 +1,11 @@
-= SixArm.com » Ruby » ProLogger custom logger with better information
+# SixArm.com » Ruby » <br> ProLogger custom logger with better information
 
-Author:: Joel Parker Henderson, joel@joelparkerhenderson.com
-Copyright:: Copyright (c) 2011 Joel Parker Henderson
-License:: See LICENSE.txt file
+* Docs: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
+* Repo: <http://github.com/sixarm/sixarm_ruby_pro_logger>
+* Email: Joel Parker Henderson, <joel@sixarm.com>
+
+
+## Introduction
 
 ProLogger is a custom logger for Rails that prints these:
 
@@ -12,14 +15,39 @@ ProLogger is a custom logger for Rails that prints these:
 * Severity: Rails defines these as debug, info, warn, error, and fatal.
 * Message: a string, exception, array, or any object that has a .inspect method)
 
-@example
+For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 
-  @logger = ProLogger.new(:hostname => 'www', :timestamp_format => "%Y-%m-%d %H:%M:%SZ")
+Want to help? We're happy to get pull requests.
 
-@example Usage
 
-  @logger.info("Hello")
-  => "2011-12-31 12:59:59Z www rails[123] Hello"
+## Quickstart
+
+Install:
+
+    gem install sixarm_ruby_pro_logger
+
+Bundler:
+
+    gem "sixarm_ruby_pro_logger", "=1.0.0"
+
+Require:
+
+    require "sixarm_ruby_pro_logger"
+
+
+## Examples
+
+Create:
+
+    @logger = ProLogger.new(:hostname => 'www', :timestamp_format => "%Y-%m-%d %H:%M:%SZ")
+
+Usage:
+
+    @logger.info("Hello")
+    => "2011-12-31 12:59:59Z www rails[123] Hello"
+
+
+## Options
 
 Intialization options:
 
@@ -29,12 +57,12 @@ Intialization options:
 * backtrace_separator: print this between exception backtrace items; default is " | "
 * line_separator: change any message newlines to this; default is " /// "
 
-@example Initialization
+Example:
 
-  @logger = ProLogger.new(
-    :hostname => 'www', 
-    :timestamp_format => "%Y-%m-%d %H:%M:%SZ"
-  )
+    @logger = ProLogger.new(
+      :hostname => 'www', 
+      :timestamp_format => "%Y-%m-%d %H:%M:%SZ"
+    )
 
 The message can be:
 
