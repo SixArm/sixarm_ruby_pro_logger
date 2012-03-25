@@ -1,6 +1,7 @@
 # SixArm.com » Ruby » <br> ProLogger custom logger with better information
 
-* Docs: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
+* Doc: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
+* Gem: <http://rubygems.org/gems/sixarm_ruby_pro_logger>
 * Repo: <http://github.com/sixarm/sixarm_ruby_pro_logger>
 * Email: Joel Parker Henderson, <joel@sixarm.com>
 
