@@ -10,11 +10,12 @@
 
 ProLogger is a custom logger formatter for Rails that prints these:
 
-  * Time stamp
-  * Hostname
-  * Process Id
-  * Severity: Rails defines these as debug, info, warn, error, and fatal.
-  * Message: a string, exception, array, or any object that has a .inspect method)
+  * Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.
+  * Program name: such as `$PROGRAM_NAME`
+  * Hostname: such as `Socket.gethostname`.
+  * Process Id: such as `Process.pid`.
+  * Severity: such as debug, info, warn, error, and fatal.
+  * Message: a string, exception, array, or any object that has a `inspect` method
 
 Example setup:
 
@@ -24,38 +25,6 @@ Example use:
 
     logger.info("Hello")
     => "2011-12-31T12:59:59Z my_program my.example.com 1000 Hello"
-
-For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
-
-Want to help? We're happy to get pull requests.
-
-
-## Install quickstart
-
-Install:
-
-    gem install sixarm_ruby_pro_logger
-
-Bundler:
-
-    gem "sixarm_ruby_pro_logger", "~>2.0.0"
-
-Require:
-
-    require "sixarm_ruby_pro_logger"
-
-
-## Install with security (optional)
-
-To enable high security for all our gems:
-
-    wget http://sixarm.com/sixarm.pem
-    gem cert --add sixarm.pem
-    gem sources --add http://sixarm.com
-
-To install with high security:
-
-    gem install sixarm_ruby_pro_logger --test --trust-policy HighSecurity
 
 
 ## Options
@@ -104,6 +73,39 @@ The message can be:
   * an array of messages: print the items in the array, separated by message_separator.
  
   * any object: first convert it to a string using object.inspect, then print it as a string as above.
+ 
+For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
+
+Want to help? We're happy to get pull requests.
+
+
+## Install quickstart
+
+Install:
+
+    gem install sixarm_ruby_pro_logger
+
+Bundler:
+
+    gem "sixarm_ruby_pro_logger", "~>2.0.0"
+
+Require:
+
+    require "sixarm_ruby_pro_logger"
+
+
+## Install with security (optional)
+
+To enable high security for all our gems:
+
+    wget http://sixarm.com/sixarm.pem
+    gem cert --add sixarm.pem
+    gem sources --add http://sixarm.com
+
+To install with high security:
+
+    gem install sixarm_ruby_pro_logger --test --trust-policy HighSecurity
+
 
 
 ## Thanks
