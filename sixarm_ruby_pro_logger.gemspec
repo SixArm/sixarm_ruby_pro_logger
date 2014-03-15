@@ -1,23 +1,26 @@
 Gem::Specification.new do |s|
 
-  s.name              = "sixarm_ruby_pro_logger"
-  s.summary           = "SixArm.com » Ruby » ProLogger custom logger for Rails"
-  s.version           = "1.0.0"
-  s.author            = "SixArm"
-  s.email             = "sixarm@sixarm.com"
-  s.homepage          = "http://sixarm.com/"
-  s.signing_key       = '/home/sixarm/keys/certs/sixarm-rsa1024-x509-private.pem'
-  s.cert_chain        = ['/home/sixarm/keys/certs/sixarm-rsa1024-x509-public.pem']
+  s.name           = "sixarm_ruby_pro_logger"
+  s.summary        = "SixArm.com » Ruby » ProLogger custom logger for Rails"
+  s.description    = "Logs more information than the typical Ruby logger."
+  s.version        = "2.0.0"
+  s.author         = "SixArm"
+  s.email          = "sixarm@sixarm.com"
+  s.homepage       = "http://sixarm.com/"
+  s.licenses       = ["BSD", "GPL", "MIT", "PAL", "Various"]
 
-  s.platform          = Gem::Platform::RUBY
-  s.require_path      = 'lib'
-  s.has_rdoc          = true
+  s.signing_key    = '/home/sixarm/keys/certs/sixarm-rsa2048-x509-20140312-gem-private-key.pem'
+  s.cert_chain     = ['/home/sixarm/keys/certs/sixarm-rsa2048-x509-20140312-gem-public-cert.pem']
 
-  top_files           = [".gemtest", "CHANGELOG.txt", "INSTALL.txt", "LICENSE.txt", "Rakefile", "README.md", "VERSION"]
-  lib_files           = ["lib/#{s.name}.rb"]
-  test_files          = ["test/#{s.name}_test.rb"]
+  s.platform       = Gem::Platform::RUBY
+  s.require_path   = 'lib'
+  s.has_rdoc       = true
 
-  s.files             = top_files + lib_files + test_files
-  s.test_files        = test_files
+  top_files        = [".gemtest", "CONTRIBUTING.md", "Rakefile", "README.md", "VERSION"]
+  lib_files        = ["lib/#{s.name}.rb"]
+  test_files       = ["test/#{s.name}_test.rb"]
+
+  s.files          = top_files + lib_files + test_files
+  s.test_files     = test_files
 
 end

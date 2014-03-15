@@ -4,18 +4,22 @@ require 'simplecov'
 SimpleCov.start
 require 'sixarm_ruby_pro_logger'
 
-class ProLoggerTest < Test::Unit::TestCase
+class ProLoggerTest < Minitest::Test
 
   def test_initialize
     x = ProLogger.new(
+      :time_format => "my_time_format",
+      :progname => "my_progname",
       :hostname => "my_hostname",
+      :pid => "my_pid",
       :message_separator => "my_message_separator",
       :backtrace_separator => "my_backtrace_separator",
       :line_separator => "my_line_separator",
-      :timestamp_format => "my_timestamp_format"
     )
+    assert_equal("my_time_format", x.time_format)
+    assert_equal("my_progname", x.progname)
     assert_equal("my_hostname", x.hostname)
-    assert_equal("my_timestamp_format", x.timestamp_format)
+    assert_equal("my_pid", x.pid)
     assert_equal("my_message_separator", x.message_separator)
     assert_equal("my_backtrace_separator", x.backtrace_separator)
     assert_equal("my_line_separator", x.line_separator)
@@ -24,51 +28,57 @@ class ProLoggerTest < Test::Unit::TestCase
   LOGGER = ProLogger.new
 
   def test_format_message
-    severity = "info"
-    timestamp = Time.now
+    LOGGER.hostname = "my_hostname"
+    LOGGER.pid = "my_pid"
+    severity = "my_severity"
+    time = Time.now
     progname = "my_progname"
     msg = "my_msg"
-    hostname = LOGGER.hostname
-    s = LOGGER.format_message(severity, timestamp, progname, msg)
-    assert(s=~/^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\dZ localhost rails\[\d+\]: my_progname info my_msg\n$/, s)
+    s = LOGGER.call(severity, time, progname, msg)
+    assert(s=~/^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ my_progname my_hostname my_pid my_severity my_msg\n$/, s)
   end
 
-  def test_timestamp_string
-   t=LOGGER.timestamp_string(Time.now)
-   assert(t=~/^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\dZ$/,t)
+  def test_time_string
+   assert_match(/^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ$/, LOGGER.time_string(Time.now))
   end
 
-  def test_exception_string
-    e = RuntimeError.new("hello")
-    e.set_backtrace(['abc:1','def:2','ghi:3'])
-    sep = LOGGER.backtrace_separator
-    assert_equal("RuntimeError hello: abc:1#{sep}def:2#{sep}ghi:3", LOGGER.exception_string(e))
+  def test_message_string_when_string
+    msg = "foo"
+    assert_equal("foo", LOGGER.message_string(msg))
   end
 
-  def test_message_string_with_simple_string
-    assert_equal("foo", LOGGER.message_string("foo"))
+  def test_message_string_when_string_with_leading_whitespace
+    msg = "   foo"
+    assert_equal("foo", LOGGER.message_string(msg))
   end
 
-  def test_message_string_with_leading_whitespace
-    assert_equal("foo", LOGGER.message_string("   foo"))
-  end
-
-  def test_message_string_with_newlines
+  def test_message_string_when_string_with_multiple_lines
     sep = LOGGER.line_separator
-    assert_equal("abc#{sep}def#{sep}ghi", LOGGER.message_string("abc\ndef\nghi"))
+    msg = "abc\ndef\nghi"
+    assert_equal("abc#{sep}def#{sep}ghi", LOGGER.message_string(msg))
   end
 
-  def test_message_string_with_array
+  def test_message_string_when_array
     sep = LOGGER.message_separator
-    assert_equal("abc#{sep}def#{sep}ghi", LOGGER.message_string(['abc','def','ghi']))
+    msg = ['abc','def','ghi']
+    assert_equal("abc#{sep}def#{sep}ghi", LOGGER.message_string(msg))
   end
 
-  def test_message_string_with_inspect_on_a_number
-    assert_equal("123", LOGGER.message_string(123))
+  def test_message_string_when_exception
+    msg = RuntimeError.new("hello")
+    msg.set_backtrace(['abc:1','def:2','ghi:3'])
+    sep = LOGGER.backtrace_separator
+    assert_equal("RuntimeError hello: abc:1#{sep}def:2#{sep}ghi:3", LOGGER.message_string_when_exception(msg))
   end
 
-  def test_message_string_with_inspect_on_a_hash
-    assert_equal("{:a=>:b}", LOGGER.message_string({:a => :b}))
+  def test_message_string_when_object_using_inspect_on_a_number
+    msg = 123
+    assert_equal("123", LOGGER.message_string_when_object(msg))
+  end
+
+  def test_message_string_when_object_using_inspect_on_a_hash
+    msg = {:a => :b}
+    assert_equal("{:a=>:b}", LOGGER.message_string_when_object(msg))
   end
 
 end

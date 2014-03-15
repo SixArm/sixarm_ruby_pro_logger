@@ -8,13 +8,22 @@
 
 ## Introduction
 
-ProLogger is a custom logger for Rails that prints these:
+ProLogger is a custom logger formatter for Rails that prints these:
 
-* Timestamp in UTC
-* Hostname
-* Process Id
-* Severity: Rails defines these as debug, info, warn, error, and fatal.
-* Message: a string, exception, array, or any object that has a .inspect method)
+  * Time stamp
+  * Hostname
+  * Process Id
+  * Severity: Rails defines these as debug, info, warn, error, and fatal.
+  * Message: a string, exception, array, or any object that has a .inspect method)
+
+Example setup:
+
+    Rails.logger.formatter = ProLogger.new
+
+Example use:
+
+    logger.info("Hello")
+    => "2011-12-31T12:59:59Z my_program my.example.com 1000 Hello"
 
 For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 
@@ -29,7 +38,7 @@ Install:
 
 Bundler:
 
-    gem "sixarm_ruby_pro_logger", "~>1.0.0"
+    gem "sixarm_ruby_pro_logger", "~>2.0.0"
 
 Require:
 
@@ -49,50 +58,64 @@ To install with high security:
     gem install sixarm_ruby_pro_logger --test --trust-policy HighSecurity
 
 
-## Examples
-
-Create:
-
-    @logger = ProLogger.new(:hostname => 'www', :timestamp_format => "%Y-%m-%d %H:%M:%SZ")
-
-Usage:
-
-    @logger.info("Hello")
-    => "2011-12-31 12:59:59Z www rails[123] Hello"
-
-
 ## Options
 
-Intialization options:
+Intialize options:
 
-* hostname: the first piece of our server's hostname, e.g. "www"; default is "localhost"
-* timestamp_format: how to print the time; default is standard "%Y-%m-%d %H:%M:%SZ"
-* message_separator: print this between message items; default is " ### "
-* backtrace_separator: print this between exception backtrace items; default is " | "
-* line_separator: change any message newlines to this; default is " /// "
+  * time_format: A format string for the `time.strftime` method.
+      Defaults to `"%Y-%m-%dT%H:%M:%SZ"` which is ISO 8601 format.
+ 
+  * progname: The running program name.
+      Default is `$PROGRAM_NAME`.
+  
+  * hostname: The server host name.
+      Default is `Socket.gethostname`.
+  
+  * pid: The process id number.
+      Default is `Process.pid`.
+  
+  * message_separator: Text to use to join mutiple messages.
+      Default is " ... ".
+  
+  * backtrace_separator: Print this between exception backtrace lines.
+      Default is " ... ".
+  
+  * line_separator: Change any message newlines to this text.
+      Default is " ... ".    
 
 Example:
 
-    @logger = ProLogger.new(
-      :hostname => 'www', 
-      :timestamp_format => "%Y-%m-%d %H:%M:%SZ"
+    Rails.logger.formatter = ProLogger.new(
+      strftime: "%Y-%m-%dT%H:%M:%SZ", 
+      progname: "my_program"
+      hostname: "my.example.com", 
+      pid: 1000,
+      line_separator: " / "
+      backtrace_separator " \"
+      message_separator: " | " 
     )
 
 The message can be:
 
-* a string: print the string, with leading whitespace stripped, and newlines replaced by line_separator.
-* an exception: print the class, message, and backtrace items separated by backtrace_separator.
-* an array of messages: print the items in the array, separated by message_separator.
-* any object: first convert it to a string using object.inspect, then print it as a string as above.
+  * a string: print the string, with leading whitespace stripped, and newlines replaced by line_separator.
+
+  * an exception: print the class, message, and backtrace items separated by backtrace_separator.
+
+  * an array of messages: print the items in the array, separated by message_separator.
+ 
+  * any object: first convert it to a string using object.inspect, then print it as a string as above.
+
+
+## Thanks
 
 Thanks to topfunky for the open source custom logger at:
 https://github.com/topfunky/hodel_3000_compliant_logger/
 
 
-
 ## Changes
 
-* 2012-03-14 1.0.0 Update docs, tests
+* 2014-03-15 2.0.0 Upgrades to be a formatter plus new options
+* 2012-03-14 1.1.0 Update docs, tests
 * 2011-11-27 1.0.0 Publish
 
 
@@ -122,4 +145,4 @@ This license is for the included software that is created by SixArm;
 some of the included software may have its own licenses, copyrights, 
 authors, etc. and these do take precedence over the SixArm license.
 
-Copyright (c) 2005-2013 Joel Parker Henderson
+Copyright (c) 2005-2014 Joel Parker Henderson
