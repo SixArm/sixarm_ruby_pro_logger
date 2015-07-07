@@ -3,7 +3,7 @@
 Please see README
 =end
 
-require 'logger'
+require "logger"
 
 class ProLogger < Logger
 
