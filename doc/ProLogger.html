@@ -6,7 +6,7 @@
 <title>
   Class: ProLogger
   
-    &mdash; Documentation by YARD 0.8.7.3
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -17,7 +17,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!ProLogger.html";
 </script>
 
 
@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/sixarm_ruby_pro_logger.rb</dd>
+    <dd class="r2 last">lib/sixarm_ruby_pro_logger/pro_logger.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -560,25 +560,25 @@
 <p>Options:</p>
 
 <pre class="code ruby"><code class="ruby">* time_format: A format string for the `time.strftime` method.
-    Defaults to `&quot;%Y-%m-%dT%H:%M:%SZ&quot;` which is ISO 8601 format.
+    Default is `&quot;%Y-%m-%dT%H:%M:%SZ&quot;` which is ISO 8601 format.
 
 * progname: The running program name.
-    Defaults to `$PROGRAM_NAME`.
+    Default is `$PROGRAM_NAME`.
 
 * hostname: The server host name.
-    Defaults to `Socket.gethostname`.
+    Default is `Socket.gethostname`.
 
 * pid: The process id number.
-    Defaults to `Process.pid`.
+    Default is `Process.pid`.
 
 * message_separator: Text to use to join mutiple messages.
-    Defaults to &quot; ... &quot;.
+    Default is &quot; ... &quot;.
 
-* backtrace_separator: Text to use to join exception backtrace lines.
-    Defaults to &quot; ... &quot;.
+* backtrace_separator: Print this between exception backtrace lines.
+    Default is &quot; ... &quot;.
 
-* line_separator: Text to use to join message lines.
-    Defaults to &quot; ... &quot;.</code></pre>
+* line_separator: Change any message newlines to this text.
+    Default is &quot; ... &quot;.</code></pre>
 
 
   </div>
@@ -609,7 +609,6 @@
       <pre class="lines">
 
 
-44
 45
 46
 47
@@ -617,10 +616,11 @@
 49
 50
 51
-52</pre>
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@time_format</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:time_format</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%dT%H:%M:%SZ</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -669,12 +669,12 @@
       <pre class="lines">
 
 
-14
 15
-16</pre>
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_backtrace_separator'>backtrace_separator</span>
   <span class='ivar'>@backtrace_separator</span>
@@ -712,12 +712,12 @@
       <pre class="lines">
 
 
-11
 12
-13</pre>
+13
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hostname'>hostname</span>
   <span class='ivar'>@hostname</span>
@@ -755,12 +755,12 @@
       <pre class="lines">
 
 
-15
 16
-17</pre>
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_line_separator'>line_separator</span>
   <span class='ivar'>@line_separator</span>
@@ -798,12 +798,12 @@
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_separator'>message_separator</span>
   <span class='ivar'>@message_separator</span>
@@ -841,12 +841,12 @@
       <pre class="lines">
 
 
-12
 13
-14</pre>
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pid'>pid</span>
   <span class='ivar'>@pid</span>
@@ -884,12 +884,12 @@
       <pre class="lines">
 
 
-10
 11
-12</pre>
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_progname'>progname</span>
   <span class='ivar'>@progname</span>
@@ -927,12 +927,12 @@
       <pre class="lines">
 
 
-9
 10
-11</pre>
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_time_format'>time_format</span>
   <span class='ivar'>@time_format</span>
@@ -1050,12 +1050,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-68
 69
-70</pre>
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_severity'>severity</span><span class='comma'>,</span> <span class='id identifier rubyid_time'>time</span><span class='comma'>,</span> <span class='id identifier rubyid_progname'>progname</span><span class='comma'>,</span> <span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time_string'>time_string</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_progname_string'>progname_string</span><span class='lparen'>(</span><span class='id identifier rubyid_progname'>progname</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_hostname'>hostname</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pid'>pid</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_severity_string'>severity_string</span><span class='lparen'>(</span><span class='id identifier rubyid_severity'>severity</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_message_string'>message_string</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
@@ -1080,7 +1080,6 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-84
 85
 86
 87
@@ -1093,10 +1092,11 @@ objects instead of strings.</p>
 94
 95
 96
-97</pre>
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_string'>message_string</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> \
@@ -1132,12 +1132,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-103
 104
-105</pre>
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_string_when_array'>message_string_when_array</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='id identifier rubyid_message_string'>message_string</span><span class='lparen'>(</span><span class='id identifier rubyid_item'>item</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_message_separator'>message_separator</span><span class='rparen'>)</span>
@@ -1162,12 +1162,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-107
 108
-109</pre>
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_string_when_exception'>message_string_when_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_backtrace_separator'>backtrace_separator</span><span class='rparen'>)</span>
@@ -1192,12 +1192,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-111
 112
-113</pre>
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_string_when_object'>message_string_when_object</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
@@ -1222,12 +1222,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-99
 100
-101</pre>
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message_string_when_string'>message_string_when_string</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_msg'>msg</span>
@@ -1252,12 +1252,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-76
 77
-78</pre>
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_progname_string'>progname_string</span><span class='lparen'>(</span><span class='id identifier rubyid_progname'>progname</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_progname'>progname</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_progname'>progname</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1282,12 +1282,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-80
 81
-82</pre>
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_severity_string'>severity_string</span><span class='lparen'>(</span><span class='id identifier rubyid_severity'>severity</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_severity'>severity</span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_severity'>severity</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1312,12 +1312,12 @@ objects instead of strings.</p>
       <pre class="lines">
 
 
-72
 73
-74</pre>
+74
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_pro_logger/pro_logger.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_time_string'>time_string</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_time_format'>time_format</span><span class='rparen'>)</span>
@@ -1332,9 +1332,9 @@ objects instead of strings.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Mar 15 00:53:21 2014 by
+  Generated on Sat Jul 18 23:50:33 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.3 (ruby-2.1.0).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

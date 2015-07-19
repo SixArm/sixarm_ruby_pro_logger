@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.7.3
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -17,7 +17,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!" + escape(window.location.href);
+  framesUrl = "frames.html#!file.README.html";
 </script>
 
 
@@ -62,8 +62,8 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'>
-<h1 id="label-SixArm.com+%C2%BB+Ruby+%C2%BB++ProLogger+custom+logger+with+better+information">SixArm.com » Ruby » <br> ProLogger custom logger with better information</h1>
-<ul><li>
+<h1 id="label-Ruby+-C2-BB++ProLogger+custom+logger+with+better+information">Ruby » <br> ProLogger custom logger with better information</h1>
+<!--HEADER-OPEN--><ul><li>
 <p>Doc: <a
 href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
 </li><li>
@@ -71,91 +71,85 @@ href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_l
 href="http://rubygems.org/gems/sixarm_ruby_pro_logger">rubygems.org/gems/sixarm_ruby_pro_logger</a></p>
 </li><li>
 <p>Repo: <a
-href="http://github.com/sixarm/sixarm_ruby_pro_logger">github.com/sixarm/sixarm_ruby_pro_logger</a></p>
-</li><li>
-<p>Email: Joel Parker Henderson, <a
-href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
+href="http://github.com/sixarm/sixarm_ruby_pro_logger">github.com/sixarm/sixarm_ruby_pro_logger</a>
+&lt;!–HEADER-SHUT–&gt;</p>
 </li></ul>
 
 <h2 id="label-Introduction">Introduction</h2>
 
 <p>ProLogger is a custom logger formatter for Rails that prints these:</p>
 <ul><li>
-<p>Time stamp</p>
+<p>Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.</p>
 </li><li>
-<p>Hostname</p>
+<p>Program name: such as <code>$PROGRAM_NAME</code></p>
 </li><li>
-<p>Process Id</p>
+<p>Hostname: such as <code>Socket.gethostname</code>.</p>
 </li><li>
-<p>Severity: Rails defines these as debug, info, warn, error, and fatal.</p>
+<p>Process Id: such as <code>Process.pid</code>.</p>
 </li><li>
-<p>Message: a string, exception, array, or any object that has a .inspect
-method)</p>
+<p>Severity: such as debug, info, warn, error, and fatal.</p>
+</li><li>
+<p>Message: a string, exception, array, or any object that has a
+<code>inspect</code> method</p>
 </li></ul>
+<!--INSTALL-OPEN-->
+<h2 id="label-Install">Install</h2>
+
+<p>To install using a Gemfile, add this:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;= 2.0.1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt; 3</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>To install using the command line, run this:</p>
+
+<pre class="code ruby"><code class="ruby">gem install sixarm_ruby_pro_logger -v &quot;&gt;= 2.0.1, &lt; 3&quot;</code></pre>
+
+<p>To install using the command line with high security, run this:</p>
+
+<pre class="code ruby"><code class="ruby">wget http://sixarm.com/sixarm.pem
+gem cert --add sixarm.pem &amp;&amp; gem sources --add http://sixarm.com
+gem install sixarm_ruby_pro_logger -v &quot;&gt;= 2.0.1, &lt; 3&quot; --trust-policy HighSecurity</code></pre>
+
+<p>To require the gem in your code:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+<!--INSTALL-SHUT-->
+<h2 id="label-Setup">Setup</h2>
 
 <p>Example setup:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_formatter'>formatter</span> <span class='op'>=</span> <span class='const'>ProLogger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
+<pre class="code ruby"><code class="ruby"><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_formatter'>formatter</span> <span class='op'>=</span> <span class='const'>ProLogger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+</code></pre>
 
 <p>Example use:</p>
 
 <pre class="code ruby"><code class="ruby">logger.info(&quot;Hello&quot;)
-=&gt; &quot;2011-12-31T12:59:59Z my_program my.example.com 1000 Hello&quot;
-</code></pre>
-
-<p>For docs go to <a
-href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
-
-<p>Want to help? We&#39;re happy to get pull requests.</p>
-
-<h2 id="label-Install+quickstart">Install quickstart</h2>
-
-<p>Install:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sixarm_ruby_pro_logger'>sixarm_ruby_pro_logger</span></code></pre>
-
-<p>Bundler:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>~&gt;1.0.0</span><span class='tstring_end'>&quot;</span></span></code></pre>
-
-<p>Require:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span>
-</code></pre>
-
-<h2 id="label-Install+with+security+%28optional%29">Install with security (optional)</h2>
-
-<p>To enable high security for all our gems:</p>
-
-<pre class="code ruby"><code class="ruby">wget http://sixarm.com/sixarm.pem
-gem cert --add sixarm.pem
-gem sources --add http://sixarm.com</code></pre>
-
-<p>To install with high security:</p>
-
-<pre class="code ruby"><code class="ruby">gem install sixarm_ruby_pro_logger --test --trust-policy HighSecurity</code></pre>
+=&gt; &quot;2011-12-31T12:59:59Z my_program my.example.com 1000 Hello&quot;</code></pre>
 
 <h2 id="label-Options">Options</h2>
 
 <p>Intialize options:</p>
 <ul><li>
-<p>time_format: A format string for the <code>time.strftime</code> method.
+<p>time_format: A format string for the <code>time.strftime</code> method. 
 Defaults to <code>&quot;%Y-%m-%dT%H:%M:%SZ&quot;</code> which is ISO 8601
 format.</p>
 </li><li>
-<p>progname: The running program name. Default is <code>$PROGRAM_NAME</code>.</p>
+<p>progname: The running program name.  Default is <code>$PROGRAM_NAME</code>.</p>
 </li><li>
-<p>hostname: The server host name. Default is <code>Socket.gethostname</code>.</p>
+<p>hostname: The server host name.  Default is
+<code>Socket.gethostname</code>.</p>
 </li><li>
-<p>pid: The process id number. Default is <code>Process.pid</code>.</p>
+<p>pid: The process id number.  Default is <code>Process.pid</code>.</p>
 </li><li>
-<p>message_separator: Text to use to join mutiple messages. Default is " ...
+<p>message_separator: Text to use to join mutiple messages.  Default is " ...
 ".</p>
 </li><li>
-<p>backtrace_separator: Print this between exception backtrace lines. Default
+<p>backtrace_separator: Print this between exception backtrace lines.  Default
 is " ... ".</p>
 </li><li>
-<p>line_separator: Change any message newlines to this. Default is " ... ".</p>
+<p>line_separator: Change any message newlines to this text.  Default is " ...
+".</p>
 </li></ul>
 
 <p>Example:</p>
@@ -185,61 +179,21 @@ message_separator.</p>
 it as a string as above.</p>
 </li></ul>
 
+<p>For docs go to <a
+href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
+
+<p>Want to help? We&#39;re happy to get pull requests.</p>
+
 <h2 id="label-Thanks">Thanks</h2>
 
 <p>Thanks to topfunky for the open source custom logger at: <a
 href="https://github.com/topfunky/hodel_3000_compliant_logger">github.com/topfunky/hodel_3000_compliant_logger</a>/</p>
-
-<h2 id="label-Changes">Changes</h2>
-<ul><li>
-<p>2014-03-15 2.0.0 Upgrades to be a formatter plus new options</p>
-</li><li>
-<p>2012-03-14 1.1.0 Update docs, tests</p>
-</li><li>
-<p>2011-11-27 1.0.0 Publish</p>
-</li></ul>
-
-<h2 id="label-License">License</h2>
-
-<p>You may choose any of these open source licenses:</p>
-<ul><li>
-<p>Apache License</p>
-</li><li>
-<p>BSD License</p>
-</li><li>
-<p>CreativeCommons License, Non-commercial Share Alike</p>
-</li><li>
-<p>GNU General Public License Version 2 (GPL 2)</p>
-</li><li>
-<p>GNU Lesser General Public License (LGPL)</p>
-</li><li>
-<p>MIT License</p>
-</li><li>
-<p>Perl Artistic License</p>
-</li><li>
-<p>Ruby License</p>
-</li></ul>
-
-<p>The software is provided “as is”, without warranty of any kind, express or
-implied, including but not limited to the warranties of merchantability,
-fitness for a particular purpose and noninfringement.</p>
-
-<p>In no event shall the authors or copyright holders be liable for any claim,
-damages or other liability, whether in an action of contract, tort or
-otherwise, arising from, out of or in connection with the software or the
-use or other dealings in the software.</p>
-
-<p>This license is for the included software that is created by SixArm; some
-of the included software may have its own licenses, copyrights, authors,
-etc. and these do take precedence over the SixArm license.</p>
-
-<p>Copyright © 2005-2014 Joel Parker Henderson</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sat Mar 15 00:53:21 2014 by
+  Generated on Sat Jul 18 23:50:33 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.3 (ruby-2.1.0).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>
