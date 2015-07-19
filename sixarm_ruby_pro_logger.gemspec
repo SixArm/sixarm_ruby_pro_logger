@@ -5,27 +5,29 @@ Gem::Specification.new do |s|
   s.name           = "sixarm_ruby_pro_logger"
   s.summary        = "SixArm.com » Ruby » ProLogger custom logger for Rails"
   s.description    = "Logs more information than the typical Ruby logger."
-  s.version        = "2.0.1"
+  s.version        = "2.0.2"
 
   s.author         = "SixArm"
   s.email          = "sixarm@sixarm.com"
   s.homepage       = "http://sixarm.com/"
   s.licenses       = ["BSD", "GPL", "MIT", "PAL", "Various"]
 
-  s.signing_key    = "/opt/keys/sixarm/sixarm-rsa-4096-x509-20150314-private.pem"
+  s.signing_key    =  "/opt/keys/sixarm/sixarm-rsa-4096-x509-20150314-private.pem"
   s.cert_chain     = ["/opt/keys/sixarm/sixarm-rsa-4096-x509-20150314-public.pem"]
 
   s.platform       = Gem::Platform::RUBY
   s.require_path   = "lib"
   s.has_rdoc       = true
 
-  top_files = [
+  s.files = [
     "Rakefile",
     "lib/sixarm_ruby_pro_logger.rb",
+    "lib/sixarm_ruby_pro_logger/pro_logger.rb",    
   ]
 
   s.test_files = [
     "test/sixarm_ruby_pro_logger_test.rb",
+    "test/sixarm_ruby_pro_logger_test/pro_logger_test.rb",
   ]
 
   s.add_development_dependency('minitest', '>= 5.7.0', '< 6')

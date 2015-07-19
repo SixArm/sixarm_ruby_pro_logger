@@ -1,8 +1,20 @@
-# Ruby » <br> ProLogger custom logger with better information
+# SixArm.com » Ruby » <br> ProLogger custom logger with better information
 
+<!--HEADER-OPEN-->
+
+[![Gem Version](https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg)](http://badge.fury.io/rb/sixarm_ruby_pro_logger)
+[![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png)](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger)
+[![Code Climate](https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger.png)](https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger)
+[![Coverage Status](https://coveralls.io/repos/SixArm/sixarm_ruby_pro_logger/badge.svg?branch=master&service=github)](https://coveralls.io/github/SixArm/sixarm_ruby_pro_logger?branch=master)
+
+* Git: <https://github.com/sixarm/sixarm_ruby_pro_logger>
 * Doc: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
-* Gem: <http://rubygems.org/gems/sixarm_ruby_pro_logger>
-* Repo: <http://github.com/sixarm/sixarm_ruby_pro_logger>
+* Gem: <https://rubygems.org/gems/sixarm_ruby_pro_logger>
+* Contact: Joel Parker Henderson, <joel@sixarm.com>
+* Changes: See CHANGES.md file.
+* License: See LICENSE.md file.
+* Helping: See CONTRIBUTING.md file.
+
 <!--HEADER-SHUT-->
 
 
@@ -16,6 +28,34 @@ ProLogger is a custom logger formatter for Rails that prints these:
   * Process Id: such as `Process.pid`.
   * Severity: such as debug, info, warn, error, and fatal.
   * Message: a string, exception, array, or any object that has a `inspect` method
+
+
+<!--INSTALL-OPEN-->
+
+## Install
+
+To install using a Gemfile, add this:
+
+    gem "sixarm_ruby_pro_logger", ">= 2.0.2", "< 3"
+
+To install using the command line, run this:
+
+    gem install sixarm_ruby_pro_logger -v ">= 2.0.2, < 3"
+
+To install using the command line with high security, run this:
+
+    wget http://sixarm.com/sixarm.pem
+    gem cert --add sixarm.pem && gem sources --add http://sixarm.com
+    gem install sixarm_ruby_pro_logger -v ">= 2.0.2, < 3" --trust-policy HighSecurity
+
+To require the gem in your code:
+
+    require "sixarm_ruby_pro_logger"
+
+<!--INSTALL-SHUT-->
+
+
+## Setup
 
 Example setup:
 
@@ -78,30 +118,6 @@ For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 
 Want to help? We're happy to get pull requests.
 
-
-<!--INSTALL-OPEN-->
-
-## Install
-
-To install using a Gemfile, add this:
-
-    gem "sixarm_ruby_pro_logger", ">= 2.0.1", "< 3"
-
-To install using the command line, run this:
-
-    gem install sixarm_ruby_pro_logger -v ">= 2.0.1, < 3"
-
-To install using the command line with high security, run this:
-
-    wget http://sixarm.com/sixarm.pem
-    gem cert --add sixarm.pem && gem sources --add http://sixarm.com
-    gem install sixarm_ruby_pro_logger -v ">= 2.0.1, < 3" --trust-policy HighSecurity
-
-To require the gem in your code:
-
-    require "sixarm_ruby_pro_logger"
-
-<!--INSTALL-SHUT-->
 
 
 
