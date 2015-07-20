@@ -62,22 +62,40 @@
     <iframe id="search_frame"></iframe>
 
     <div id="content"><div id='filecontents'>
-<h1 id="label-Ruby+-C2-BB++ProLogger+custom+logger+with+better+information">Ruby » <br> ProLogger custom logger with better information</h1>
-<!--HEADER-OPEN--><ul><li>
+<h1 id="label-SixArm.com+-C2-BB+Ruby+-C2-BB++ProLogger+custom+logger+with+better+information">SixArm.com » Ruby » <br> ProLogger custom logger with better information</h1>
+<!--HEADER-OPEN-->
+<p><a href="http://badge.fury.io/rb/sixarm_ruby_pro_logger"><img
+src="https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg"></a> <a
+href="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger"><img
+src="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png"></a> <a
+href="https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger"><img
+src="https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger.png"></a>
+<a
+href="https://coveralls.io/github/SixArm/sixarm_ruby_pro_logger?branch=master"><img
+src="https://coveralls.io/repos/SixArm/sixarm_ruby_pro_logger/badge.svg?branch=master&service=github"></a></p>
+<ul><li>
+<p>Git: <a
+href="https://github.com/sixarm/sixarm_ruby_pro_logger">github.com/sixarm/sixarm_ruby_pro_logger</a></p>
+</li><li>
 <p>Doc: <a
 href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
 </li><li>
 <p>Gem: <a
-href="http://rubygems.org/gems/sixarm_ruby_pro_logger">rubygems.org/gems/sixarm_ruby_pro_logger</a></p>
+href="https://rubygems.org/gems/sixarm_ruby_pro_logger">rubygems.org/gems/sixarm_ruby_pro_logger</a></p>
 </li><li>
-<p>Repo: <a
-href="http://github.com/sixarm/sixarm_ruby_pro_logger">github.com/sixarm/sixarm_ruby_pro_logger</a>
-&lt;!–HEADER-SHUT–&gt;</p>
+<p>Contact: Joel Parker Henderson, <a
+href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
+</li><li>
+<p>Changes: See CHANGES.md file.</p>
+</li><li>
+<p>License: See LICENSE.md file.</p>
+</li><li>
+<p>Helping: See CONTRIBUTING.md file.</p>
 </li></ul>
-
+<!--HEADER-SHUT-->
 <h2 id="label-Introduction">Introduction</h2>
 
-<p>ProLogger is a custom logger formatter for Rails that prints these:</p>
+<p>ProLogger is a custom logger formatter for that prints these fields:</p>
 <ul><li>
 <p>Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.</p>
 </li><li>
@@ -97,22 +115,16 @@ href="http://github.com/sixarm/sixarm_ruby_pro_logger">github.com/sixarm/sixarm_
 
 <p>To install using a Gemfile, add this:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;= 2.0.1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt; 3</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~&gt; 2.0.3</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
 <p>To install using the command line, run this:</p>
 
-<pre class="code ruby"><code class="ruby">gem install sixarm_ruby_pro_logger -v &quot;&gt;= 2.0.1, &lt; 3&quot;</code></pre>
+<pre class="code ruby"><code class="ruby">gem install sixarm_ruby_pro_logger -v &#39;~&gt; 2.0.3&#39;</code></pre>
 
-<p>To install using the command line with high security, run this:</p>
+<p>To require this gem in your code:</p>
 
-<pre class="code ruby"><code class="ruby">wget http://sixarm.com/sixarm.pem
-gem cert --add sixarm.pem &amp;&amp; gem sources --add http://sixarm.com
-gem install sixarm_ruby_pro_logger -v &quot;&gt;= 2.0.1, &lt; 3&quot; --trust-policy HighSecurity</code></pre>
-
-<p>To require the gem in your code:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 <!--INSTALL-SHUT-->
 <h2 id="label-Setup">Setup</h2>
@@ -179,11 +191,6 @@ message_separator.</p>
 it as a string as above.</p>
 </li></ul>
 
-<p>For docs go to <a
-href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
-
-<p>Want to help? We&#39;re happy to get pull requests.</p>
-
 <h2 id="label-Thanks">Thanks</h2>
 
 <p>Thanks to topfunky for the open source custom logger at: <a
@@ -191,7 +198,7 @@ href="https://github.com/topfunky/hodel_3000_compliant_logger">github.com/topfun
 </div></div>
 
     <div id="footer">
-  Generated on Sat Jul 18 23:50:33 2015 by
+  Generated on Sun Jul 19 18:54:23 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>
