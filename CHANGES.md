@@ -1,6 +1,6 @@
 # Changes
 
-* 2015-07-18 2.0.2 Improve quality assurance
+* 2015-07-18 2.0.3 Improve quality assurance
 * 2015-07-07 2.0.1 Update gemspec to use file manifest
 * 2014-03-15 2.0.0 Upgrades to be a formatter plus new options
 * 2012-03-14 1.1.0 Update docs, tests

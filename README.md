@@ -20,7 +20,7 @@
 
 ## Introduction
 
-ProLogger is a custom logger formatter for Rails that prints these:
+ProLogger is a custom logger formatter for that prints these fields:
 
   * Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.
   * Program name: such as `$PROGRAM_NAME`
@@ -36,21 +36,15 @@ ProLogger is a custom logger formatter for Rails that prints these:
 
 To install using a Gemfile, add this:
 
-    gem "sixarm_ruby_pro_logger", ">= 2.0.2", "< 3"
+    gem 'sixarm_ruby_pro_logger', '~> 2.0.3'
 
 To install using the command line, run this:
 
-    gem install sixarm_ruby_pro_logger -v ">= 2.0.2, < 3"
+    gem install sixarm_ruby_pro_logger -v '~> 2.0.3'
 
-To install using the command line with high security, run this:
+To require this gem in your code:
 
-    wget http://sixarm.com/sixarm.pem
-    gem cert --add sixarm.pem && gem sources --add http://sixarm.com
-    gem install sixarm_ruby_pro_logger -v ">= 2.0.2, < 3" --trust-policy HighSecurity
-
-To require the gem in your code:
-
-    require "sixarm_ruby_pro_logger"
+    require 'sixarm_ruby_pro_logger'
 
 <!--INSTALL-SHUT-->
 
@@ -114,12 +108,6 @@ The message can be:
  
   * any object: first convert it to a string using object.inspect, then print it as a string as above.
  
-For docs go to <http://sixarm.com/sixarm_ruby_pro_logger/doc>
-
-Want to help? We're happy to get pull requests.
-
-
-
 
 ## Thanks
 
