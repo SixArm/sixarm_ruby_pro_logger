@@ -1,1 +1,0 @@
-e54c519dfa5fa170e628d6c5ee5a0442dc9e2e7fcc12a055c6d98a859b2848f19a1d1e931fd20889f9d3a949a365e7f74fd4fc3ffcd6600aaa45a200daed421e  sixarm_ruby_pro_logger-2.0.3.gem

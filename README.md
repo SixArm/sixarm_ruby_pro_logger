@@ -1,4 +1,4 @@
-# SixArm.com » Ruby » <br> ProLogger custom logger with better information
+# SixArm.com → Ruby → <br> ProLogger custom logger with better information
 
 <!--HEADER-OPEN-->
 
@@ -11,9 +11,7 @@
 * Doc: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 * Gem: <https://rubygems.org/gems/sixarm_ruby_pro_logger>
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
-* Changes: See CHANGES.md file.
-* License: See LICENSE.md file.
-* Helping: See CONTRIBUTING.md file.
+* Project: [Changes](CHANGES.md), [License](LICENSE.md), [Contributing](CONTRIBUTING.md).
 
 <!--HEADER-SHUT-->
 
@@ -34,15 +32,19 @@ ProLogger is a custom logger formatter for that prints these fields:
 
 ## Install
 
-To install using a Gemfile, add this:
+### Gem
 
-    gem 'sixarm_ruby_pro_logger', '~> 2.0.3'
+Run this command in your shell or terminal:
 
-To install using the command line, run this:
+    gem install sixarm_ruby_pro_logger
 
-    gem install sixarm_ruby_pro_logger -v '~> 2.0.3'
+Or add this to your Gemfile:
 
-To require this gem in your code:
+    gem 'sixarm_ruby_pro_logger'
+
+### Require
+
+To require the gem in your code:
 
     require 'sixarm_ruby_pro_logger'
 
