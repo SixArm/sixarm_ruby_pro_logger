@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
 
   s.name           = "sixarm_ruby_pro_logger"
-  s.summary        = "SixArm.com » Ruby » ProLogger custom logger for Rails"
+  s.summary        = "SixArm.com → Ruby → ProLogger custom logger for Rails"
   s.description    = "Logs more information than the typical Ruby logger."
   s.version        = "2.0.3"
 
