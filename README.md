@@ -1,6 +1,6 @@
 # SixArm.com → Ruby → <br> ProLogger custom logger with better information
 
-<!--HEADER-OPEN-->
+<!--header-open-->
 
 [![Gem Version](https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg)](http://badge.fury.io/rb/sixarm_ruby_pro_logger)
 [![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png)](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger)
@@ -13,7 +13,7 @@
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
 * Project: [Changes](CHANGES.md), [License](LICENSE.md), [Contributing](CONTRIBUTING.md).
 
-<!--HEADER-SHUT-->
+<!--header-shut-->
 
 
 ## Introduction
@@ -28,7 +28,7 @@ ProLogger is a custom logger formatter for that prints these fields:
   * Message: a string, exception, array, or any object that has a `inspect` method
 
 
-<!--INSTALL-OPEN-->
+<!--install-opent-->
 
 ## Install
 
@@ -48,7 +48,7 @@ To require the gem in your code:
 
     require 'sixarm_ruby_pro_logger'
 
-<!--INSTALL-SHUT-->
+<!--install-shut-->
 
 
 ## Setup
