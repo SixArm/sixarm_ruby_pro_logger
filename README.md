@@ -5,13 +5,12 @@
 [![Gem Version](https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg)](http://badge.fury.io/rb/sixarm_ruby_pro_logger)
 [![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png)](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger)
 [![Code Climate Maintainability](https://api.codeclimate.com/v1/badges/3f2942d5f57dafdf80b4/maintainability)](https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger/maintainability)
-[![Coverage Status](https://coveralls.io/repos/SixArm/sixarm_ruby_pro_logger/badge.svg?branch=master&service=github)](https://coveralls.io/github/SixArm/sixarm_ruby_pro_logger?branch=master)
 
 * Git: <https://github.com/sixarm/sixarm_ruby_pro_logger>
 * Doc: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 * Gem: <https://rubygems.org/gems/sixarm_ruby_pro_logger>
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
-* Project: [Changes](CHANGES.md), [License](LICENSE.md), [Contributing](CONTRIBUTING.md).
+* Project: [changes](CHANGES.md), [license](LICENSE.md), [contributing](CONTRIBUTING.md).
 
 <!--header-shut-->
 
@@ -28,7 +27,7 @@ ProLogger is a custom logger formatter for that prints these fields:
   * Message: a string, exception, array, or any object that has a `inspect` method
 
 
-<!--install-opent-->
+<!--install-open-->
 
 ## Install
 
