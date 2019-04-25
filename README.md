@@ -4,9 +4,9 @@
 
 [![Gem Version](https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg)](http://badge.fury.io/rb/sixarm_ruby_pro_logger)
 [![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png)](https://travis-ci.org/SixArm/sixarm_ruby_pro_logger)
-[![Code Climate Maintainability](https://api.codeclimate.com/v1/badges/3f2942d5f57dafdf80b4/maintainability)](https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger/maintainability)
+[![Code Climate](https://api.codeclimate.com/v1/badges/3f2942d5f57dafdf80b4/maintainability)](https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger/maintainability)
 
-* Git: <https://github.com/sixarm/sixarm_ruby_pro_logger>
+* Git: <https://github.com/SixArm/sixarm_ruby_pro_logger>
 * Doc: <http://sixarm.com/sixarm_ruby_pro_logger/doc>
 * Gem: <https://rubygems.org/gems/sixarm_ruby_pro_logger>
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
@@ -33,11 +33,13 @@ ProLogger is a custom logger formatter for that prints these fields:
 
 ### Gem
 
-Run this command in your shell or terminal:
+To install this gem in your shell or terminal:
 
     gem install sixarm_ruby_pro_logger
 
-Or add this to your Gemfile:
+### Gemfile
+
+To add this gem to your Gemfile:
 
     gem 'sixarm_ruby_pro_logger'
 
