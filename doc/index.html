@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.14
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -57,63 +57,63 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>SixArm.com → Ruby → <br> ProLogger custom logger with better information</h1>
-
+      <div id="content"><div id='filecontents'>
+<h1 id="label-SixArm.com+-E2-86-92+Ruby+-E2-86-92++ProLogger+custom+logger+with+better+information">SixArm.com → Ruby → <br> ProLogger custom logger with better information</h1>
 <!--header-open-->
-
-<p><a href="http://badge.fury.io/rb/sixarm_ruby_pro_logger"><img src="https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg" alt="Gem Version"></a>
-<a href="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger"><img src="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png" alt="Build Status"></a>
-<a href="https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger/maintainability"><img src="https://api.codeclimate.com/v1/badges/3f2942d5f57dafdf80b4/maintainability" alt="Code Climate Maintainability"></a></p>
-
-<ul>
-<li>Git: <a href="https://github.com/sixarm/sixarm_ruby_pro_logger">https://github.com/sixarm/sixarm_ruby_pro_logger</a></li>
-<li>Doc: <a href="http://sixarm.com/sixarm_ruby_pro_logger/doc">http://sixarm.com/sixarm_ruby_pro_logger/doc</a></li>
-<li>Gem: <a href="https://rubygems.org/gems/sixarm_ruby_pro_logger">https://rubygems.org/gems/sixarm_ruby_pro_logger</a></li>
-<li>Contact: Joel Parker Henderson, <a href="mailto:joel@sixarm.com">joel@sixarm.com</a></li>
-<li>Project: <a href="CHANGES.md">changes</a>, <a href="LICENSE.md">license</a>, <a href="CONTRIBUTING.md">contributing</a>.</li>
-</ul>
-
+<p><a href="http://badge.fury.io/rb/sixarm_ruby_pro_logger"><img src="https://badge.fury.io/rb/sixarm_ruby_pro_logger.svg"></a> <a href="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger"><img src="https://travis-ci.org/SixArm/sixarm_ruby_pro_logger.png"></a> <a href="https://codeclimate.com/github/SixArm/sixarm_ruby_pro_logger/maintainability"><img src="https://api.codeclimate.com/v1/badges/3f2942d5f57dafdf80b4/maintainability"></a></p>
+<ul><li>
+<p>Git: <a href="https://github.com/SixArm/sixarm_ruby_pro_logger">github.com/SixArm/sixarm_ruby_pro_logger</a></p>
+</li><li>
+<p>Doc: <a href="http://sixarm.com/sixarm_ruby_pro_logger/doc">sixarm.com/sixarm_ruby_pro_logger/doc</a></p>
+</li><li>
+<p>Gem: <a href="https://rubygems.org/gems/sixarm_ruby_pro_logger">rubygems.org/gems/sixarm_ruby_pro_logger</a></p>
+</li><li>
+<p>Contact: Joel Parker Henderson, <a href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
+</li><li>
+<p>Project: <a href="CHANGES.md">changes</a>, <a href="LICENSE.md">license</a>, <a href="CONTRIBUTING.md">contributing</a>.</p>
+</li></ul>
 <!--header-shut-->
-
-<h2>Introduction</h2>
+<h2 id="label-Introduction">Introduction</h2>
 
 <p>ProLogger is a custom logger formatter for that prints these fields:</p>
-
-<ul>
-<li>Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.</li>
-<li>Program name: such as <code>$PROGRAM_NAME</code></li>
-<li>Hostname: such as <code>Socket.gethostname</code>.</li>
-<li>Process Id: such as <code>Process.pid</code>.</li>
-<li>Severity: such as debug, info, warn, error, and fatal.</li>
-<li>Message: a string, exception, array, or any object that has a <code>inspect</code> method</li>
-</ul>
-
+<ul><li>
+<p>Time stamp: such as ISO 8601 format using YYYY-MM-DD and HH:MM:SS.</p>
+</li><li>
+<p>Program name: such as <code>$PROGRAM_NAME</code></p>
+</li><li>
+<p>Hostname: such as <code>Socket.gethostname</code>.</p>
+</li><li>
+<p>Process Id: such as <code>Process.pid</code>.</p>
+</li><li>
+<p>Severity: such as debug, info, warn, error, and fatal.</p>
+</li><li>
+<p>Message: a string, exception, array, or any object that has a <code>inspect</code> method</p>
+</li></ul>
 <!--install-open-->
+<h2 id="label-Install">Install</h2>
 
-<h2>Install</h2>
+<h3 id="label-Gem">Gem</h3>
 
-<h3>Gem</h3>
-
-<p>Run this command in your shell or terminal:</p>
+<p>To install this gem in your shell or terminal:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sixarm_ruby_pro_logger'>sixarm_ruby_pro_logger</span>
 </code></pre>
 
-<p>Or add this to your Gemfile:</p>
+<h3 id="label-Gemfile">Gemfile</h3>
+
+<p>To add this gem to your Gemfile:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
-<h3>Require</h3>
+<h3 id="label-Require">Require</h3>
 
 <p>To require the gem in your code:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_pro_logger</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
-
 <!--install-shut-->
-
-<h2>Setup</h2>
+<h2 id="label-Setup">Setup</h2>
 
 <p>Example setup:</p>
 
@@ -126,26 +126,24 @@
 =&gt; &quot;2011-12-31T12:59:59Z my_program my.example.com 1000 Hello&quot;
 </code></pre>
 
-<h2>Options</h2>
+<h2 id="label-Options">Options</h2>
 
 <p>Intialize options:</p>
-
-<ul>
-<li><p>time_format: A format string for the <code>time.strftime</code> method.
-  Defaults to <code>&quot;%Y-%m-%dT%H:%M:%SZ&quot;</code> which is ISO 8601 format.</p></li>
-<li><p>progname: The running program name.
-  Default is <code>$PROGRAM_NAME</code>.</p></li>
-<li><p>hostname: The server host name.
-  Default is <code>Socket.gethostname</code>.</p></li>
-<li><p>pid: The process id number.
-  Default is <code>Process.pid</code>.</p></li>
-<li><p>message_separator: Text to use to join mutiple messages.
-  Default is &quot; ... &quot;.</p></li>
-<li><p>backtrace_separator: Print this between exception backtrace lines.
-  Default is &quot; ... &quot;.</p></li>
-<li><p>line_separator: Change any message newlines to this text.
-  Default is &quot; ... &quot;.    </p></li>
-</ul>
+<ul><li>
+<p>time_format: A format string for the <code>time.strftime</code> method.  Defaults to <code>&quot;%Y-%m-%dT%H:%M:%SZ&quot;</code> which is ISO 8601 format.</p>
+</li><li>
+<p>progname: The running program name.  Default is <code>$PROGRAM_NAME</code>.</p>
+</li><li>
+<p>hostname: The server host name.  Default is <code>Socket.gethostname</code>.</p>
+</li><li>
+<p>pid: The process id number.  Default is <code>Process.pid</code>.</p>
+</li><li>
+<p>message_separator: Text to use to join mutiple messages.  Default is " ... ".</p>
+</li><li>
+<p>backtrace_separator: Print this between exception backtrace lines.  Default is " ... ".</p>
+</li><li>
+<p>line_separator: Change any message newlines to this text.  Default is " ... ".</p>
+</li></ul>
 
 <p>Example:</p>
 
@@ -161,24 +159,25 @@
 </code></pre>
 
 <p>The message can be:</p>
+<ul><li>
+<p>a string: print the string, with leading whitespace stripped, and newlines replaced by line_separator.</p>
+</li><li>
+<p>an exception: print the class, message, and backtrace items separated by backtrace_separator.</p>
+</li><li>
+<p>an array of messages: print the items in the array, separated by message_separator.</p>
+</li><li>
+<p>any object: first convert it to a string using object.inspect, then print it as a string as above.</p>
+</li></ul>
 
-<ul>
-<li><p>a string: print the string, with leading whitespace stripped, and newlines replaced by line_separator.</p></li>
-<li><p>an exception: print the class, message, and backtrace items separated by backtrace_separator.</p></li>
-<li><p>an array of messages: print the items in the array, separated by message_separator.</p></li>
-<li><p>any object: first convert it to a string using object.inspect, then print it as a string as above.</p></li>
-</ul>
+<h2 id="label-Thanks">Thanks</h2>
 
-<h2>Thanks</h2>
-
-<p>Thanks to topfunky for the open source custom logger at:
-<a href="https://github.com/topfunky/hodel_3000_compliant_logger/">https://github.com/topfunky/hodel_3000_compliant_logger/</a></p>
+<p>Thanks to topfunky for the open source custom logger at: <a href="https://github.com/topfunky/hodel_3000_compliant_logger">github.com/topfunky/hodel_3000_compliant_logger</a>/</p>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Jun 22 00:26:52 2018 by
+  Generated on Thu Apr 25 22:30:48 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.14 (ruby-2.5.1).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>
